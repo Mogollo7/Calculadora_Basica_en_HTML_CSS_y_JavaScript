@@ -15,15 +15,12 @@ function dividir() {
 }
 
 function realizarOperacion(operacion) {
-
     var num1 = document.getElementById("numero1").value;
     var num2 = document.getElementById("numero2").value;
-
 
     num1 = parseFloat(num1);
     num2 = parseFloat(num2);
     var resultado;
-
 
     switch (operacion) {
         case "suma":
@@ -39,14 +36,14 @@ function realizarOperacion(operacion) {
             if (num2 !== 0) {
                 resultado = num1 / num2;
             } else {
-                alert("No se puede dividir por cero.");
+                document.getElementById("resultado").innerText = "Error: No se puede dividir por cero.";
                 return;
             }
             break;
         default:
-            alert("Operación no válida.");
+            document.getElementById("resultado").innerText = "Operación no válida.";
             return;
     }
 
-    alert("El resultado de la " + operacion + " es: " + resultado);
+    document.getElementById("resultado").innerText = resultado;
 }
